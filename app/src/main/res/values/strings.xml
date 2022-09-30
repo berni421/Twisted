@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Twisted</string>
+    <string name="title_activity_disclaimer">DisclaimerActivity</string>
+    <string name="disclaimer_text"><center>Terms of Use</center>\n\n
+        Please ensure that before using this application that you expressly understand and agree that your use of this application is at your sole risk and that the application is provided “as is” and “as available” without warranty of any kind, to the maximum extent permitted by applicable law.\n\n
+        Once the applicable is available to you through your google account, you should check the application as soon as reasonably possible to ensure that it functions and performs as stated, and notify us or Provider as soon as reasonably possible if you find any errors or defect.\n\n
+    </string>
+    <string name="disclaimer_accept">I accept these terms.</string>
+    <string name="dont_show_next_time">Do not show next time?</string>
+    <string name="intro_welcome">Welcome\n\nThese images inspired by the work of Bridget Riley. According to Wikipedia: Riley began investigating colour in 1967, the year in which she produced her first stripe painting. Following a major retrospective in the early 1970s, Riley began travelling extensively. After a trip to Egypt in the early 1980s, where she was inspired by colourful hieroglyphic decoration, Riley began to explore colour and contrast. In some works, lines of colour are used to create a shimmering effect, while in others the canvas is filled with tessellating patterns. https://en.wikipedia.org/wiki/Bridget_Riley</string>
+    <string name="intro_welcome2">A new animated stripe image is randomly generated each time the applications runs. The metallic appearance is highlighted by two spotlights at the top left and right corners.</string>
+    <string name="into_donate_text">Please make a financial gift of your choice to support my software projects. See menu options top right - help feed the cat.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
