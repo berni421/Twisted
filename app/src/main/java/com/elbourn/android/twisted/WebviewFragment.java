@@ -1,12 +1,12 @@
 package com.elbourn.android.twisted;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.webkit.WebViewAssetLoader;
 import androidx.webkit.WebViewClientCompat;
 
@@ -14,13 +14,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class WebviewFragment extends Fragment {
 
@@ -37,16 +37,6 @@ public class WebviewFragment extends Fragment {
         startWebView(view);
         return view;
     }
-
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        Log.i(TAG, "start onResume");
-//        if (view != null) {
-//            startWebView(view);
-//        }
-//        Log.i(TAG, "end onResume");
-//    }
 
     void startWebView(View view) {
         Context context = getContext();
@@ -75,5 +65,7 @@ public class WebviewFragment extends Fragment {
             }
         });
         myWebView.loadUrl(assetUrl);
+        Animation animFadeIn = AnimationUtils.loadAnimation(context,R.anim.fade_in);
+        view.startAnimation(animFadeIn);
     }
 }

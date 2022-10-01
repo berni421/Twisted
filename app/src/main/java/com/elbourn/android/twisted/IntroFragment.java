@@ -97,6 +97,5 @@ public class IntroFragment extends Fragment {
     void startWebviewFragment() {
         NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
         navController.navigate(R.id.action_introFragment_to_webviewFragment);
-
     }
 }
