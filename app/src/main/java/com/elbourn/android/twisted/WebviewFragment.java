@@ -1,5 +1,6 @@
 package com.elbourn.android.twisted;
 
+import android.app.appsearch.GetByDocumentIdRequest;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -34,13 +35,38 @@ public class WebviewFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_webview, container, false);
-        startWebView(view);
         return view;
     }
 
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Log.i(TAG, "start onViewCreated");
+        startWebView(view);
+
+        Log.i(TAG, "end onViewCreated");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i(TAG, "start onResume");
+        startAnimation();
+        Log.i(TAG, "end onResume");
+    }
+
+    void startAnimation() {
+        Log.i(TAG, "start startAnamation");
+        // Sadly navigation based animation does not work if Intro is hidden
+        Animation animFadeIn = AnimationUtils.loadAnimation(getContext(), R.anim.rotate_in);
+        view.startAnimation(animFadeIn);
+        Log.i(TAG, "end startAnamation");
+    }
+
     void startWebView(View view) {
+        Log.i(TAG, "start startWebView");
         Context context = getContext();
-        String msg = "Loading twisted .. please wait.";
+        String msg = "Loading .. please wait.";
         Log.i(TAG, "msg: " + msg);
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
         WebView myWebView = (WebView) view.findViewById(R.id.webview);
@@ -65,7 +91,6 @@ public class WebviewFragment extends Fragment {
             }
         });
         myWebView.loadUrl(assetUrl);
-        Animation animFadeIn = AnimationUtils.loadAnimation(context,R.anim.fade_in);
-        view.startAnimation(animFadeIn);
+        Log.i(TAG, "end startWebView");
     }
 }

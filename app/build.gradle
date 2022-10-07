@@ -9,8 +9,8 @@ android {
         applicationId "com.elbourn.android.twisted"
         minSdk 23
         targetSdk 32
-        versionCode 4
-        versionName "0.4"
+        versionCode 6
+        versionName "0.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -25,6 +25,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    namespace 'com.elbourn.android.twisted'
 }
 
 dependencies {
@@ -43,7 +44,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
 
-//    // Kotlin
+    // Kotlin
 //    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
 //    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 

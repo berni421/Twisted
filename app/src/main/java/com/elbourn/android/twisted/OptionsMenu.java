@@ -30,11 +30,13 @@ public class OptionsMenu extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        Log.i(TAG, "start onCreateOptionsMenu");
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_options, menu);
         Context context = getApplicationContext();
         MenuItem introCheckBox = menu.findItem(R.id.menuIntroOff);
         introCheckBox.setChecked(IntroFragment.getIntroCheckBox(context));
+        Log.i(TAG, "end onCreateOptionsMenu");
         return true;
     }
 

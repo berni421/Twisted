@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -24,30 +25,25 @@ public class DisclaimerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_disclaimer, container, false);
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Log.i(TAG, "start onViewCreated");
         Context context = getContext();
         SharedPreferences sharedPreferences = context.getSharedPreferences(APP, MODE_PRIVATE);
         Boolean disclaimerCheckBox = sharedPreferences.getBoolean("disclaimerCheckBox", false);
         Log.i(TAG, "disclaimerCheckBox: " + disclaimerCheckBox);
         if (disclaimerCheckBox) {
             startIntroFragment();
+        } else {
+            setupButtons(view);
         }
-        View view = inflater.inflate(R.layout.fragment_disclaimer, container, false);
-        setupButtons(view);
-        return view;
+        Log.i(TAG, "end onViewCreated");
     }
-
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        Log.i(TAG, "start onResume");
-//        Context context = getContext();
-//        SharedPreferences sharedPreferences = context.getSharedPreferences(APP, MODE_PRIVATE);
-//        Boolean disclaimerCheckBox = sharedPreferences.getBoolean("disclaimerCheckBox", false);
-//        if (disclaimerCheckBox) {
-//            startIntroFragment();
-//        }
-//        Log.i(TAG, "end onResume");
-//    }
 
     void setupButtons(View view) {
         CheckBox disclaimerAgreedBox = view.findViewById(R.id.disclaimerCheckBox);
@@ -59,7 +55,6 @@ public class DisclaimerFragment extends Fragment {
                 Context context = getContext();
                 SharedPreferences sharedPreferences = context.getSharedPreferences(APP, MODE_PRIVATE);
                 if (checkBox.isChecked()) {
-                    Log.i(TAG, "disclaimerAgreedBox true");
                     sharedPreferences.edit().putBoolean("disclaimerCheckBox", true).apply();
                     startIntroFragment();
                 }
@@ -69,7 +64,8 @@ public class DisclaimerFragment extends Fragment {
     }
 
     void startIntroFragment() {
-        NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
-        navController.navigate(R.id.action_disclaimerFragment_to_introFragment);
+        Log.i(TAG, "start startIntroFragment");
+        NavHostFragment.findNavController(this).navigate(R.id.action_disclaimerFragment_to_introFragment);
+        Log.i(TAG, "end startIntroFragment");
     }
 }

@@ -21,31 +21,14 @@ import androidx.webkit.WebViewClientCompat;
 public class MainActivity extends OptionsMenu {
 
     private String TAG = "MainActivity";
-    NavController navController = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "start onCreate");
         setContentView(R.layout.activity_main);
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-        Log.i(TAG, "navHostFragment: " + navHostFragment);
-        navController = navHostFragment.getNavController();
-        Log.i(TAG, "navController: " + navController);
-        navController.navigate(R.id.disclaimerFragment);
-        Log.i(TAG, "start onCreate");
+        Log.i(TAG, "end onCreate");
     }
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        Log.i(TAG, "start onResume");
-//        if (!(navController == null)) {
-//            Log.i(TAG, "navController: " + navController);
-//            navController.navigate(R.id.disclaimerFragment);
-//        }
-//        Log.i(TAG, "end onResume");
-//    }
 
     @Override
     public void onBackPressed(){
