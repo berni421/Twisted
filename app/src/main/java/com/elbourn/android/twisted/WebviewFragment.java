@@ -58,8 +58,8 @@ public class WebviewFragment extends Fragment {
     void startAnimation() {
         Log.i(TAG, "start startAnamation");
         // Sadly navigation based animation does not work if Intro is hidden
-        Animation animFadeIn = AnimationUtils.loadAnimation(getContext(), R.anim.rotate_in);
-        view.startAnimation(animFadeIn);
+        Animation animRotateIn = AnimationUtils.loadAnimation(getContext(), R.anim.rotate_in);
+        view.startAnimation(animRotateIn);
         Log.i(TAG, "end startAnamation");
     }
 

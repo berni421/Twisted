@@ -9,7 +9,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   textFont(myFont);
-  background("black");
+  background("grey");
   play = true;
   strips = new Strips();
   frameRate(2);
