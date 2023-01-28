@@ -8,7 +8,7 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/restart"
-        android:title="Produce a new image."
+        android:title="Load some new twists."
         app:showAsAction="never" />
     <item
         android:id="@+id/menuDonate"
