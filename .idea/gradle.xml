@@ -9,8 +9,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$USER_HOME$/Dropbox/Documents/AndroidStudioProjects/Twisted" />
-            <option value="$USER_HOME$/Dropbox/Documents/AndroidStudioProjects/Twisted/app" />
+            <option value="$USER_HOME$/Documents/AndroidStudioProjects/Twisted" />
+            <option value="$USER_HOME$/Documents/AndroidStudioProjects/Twisted/app" />
           </set>
         </option>
       </GradleProjectSettings>
