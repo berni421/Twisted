@@ -3,6 +3,8 @@ package com.elbourn.android.twisted;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.activity.OnBackPressedCallback;
+
 public class MainActivity extends OptionsMenu {
 
     private String TAG = "MainActivity";
@@ -13,11 +15,14 @@ public class MainActivity extends OptionsMenu {
         Log.i(TAG, "start onCreate");
         setContentView(R.layout.activity_main);
         Log.i(TAG, "end onCreate");
-    }
 
-    @Override
-    public void onBackPressed(){
-        super.onBackPressed();
-            finishAffinity();
+        OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // Back is pressed... Finishing the activity
+                finish();
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this,onBackPressedCallback);
     }
 }
