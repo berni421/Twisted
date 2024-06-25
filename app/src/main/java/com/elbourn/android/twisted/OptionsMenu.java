@@ -107,7 +107,7 @@ public class OptionsMenu extends AppCompatActivity {
                     .remove(f)
                     .commit();
             nHF.getChildFragmentManager().beginTransaction()
-                    .add(f, "tag")
+                    .add(f, null)
                     .commit();
         }
     }

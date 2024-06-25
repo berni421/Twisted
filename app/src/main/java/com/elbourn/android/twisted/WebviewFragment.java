@@ -43,7 +43,6 @@ public class WebviewFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Log.i(TAG, "start onViewCreated");
         startWebView(view);
-
         Log.i(TAG, "end onViewCreated");
     }
 
@@ -51,20 +50,20 @@ public class WebviewFragment extends Fragment {
     public void onResume() {
         super.onResume();
         Log.i(TAG, "start onResume");
-        startAnimation();
         Log.i(TAG, "end onResume");
     }
 
-    void startAnimation() {
-        Log.i(TAG, "start startAnamation");
-        // Sadly navigation based animation does not work if Intro is hidden
-        Animation animRotateIn = AnimationUtils.loadAnimation(getContext(), R.anim.rotate_in);
-        view.startAnimation(animRotateIn);
-        Log.i(TAG, "end startAnamation");
-    }
+//    void startAnimation() {
+//        Log.i(TAG, "start startAnamation");
+//        // Sadly navigation based animation does not work if Intro is hidden
+//        Animation animRotateIn = AnimationUtils.loadAnimation(getContext(), R.anim.rotate_in);
+//        view.startAnimation(animRotateIn);
+//        Log.i(TAG, "end startAnamation");
+//    }
 
     void startWebView(View view) {
         Log.i(TAG, "start startWebView");
+
         Context context = getContext();
         String msg = "Loading .. please wait.";
         Log.i(TAG, "msg: " + msg);
